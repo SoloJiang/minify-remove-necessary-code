@@ -6,6 +6,8 @@ const { transformSync } = require('@swc/core');
 function transform() {
   const srcPath = path.join(process.cwd(), 'src/index.js');
   const source = fs.readFileSync(srcPath, 'utf-8');
+  // without minify
+  // const code = source;
   const { code } = transformSync(source, {
     jsc: {
       minify: {
